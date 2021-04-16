@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:cafe_management/components/custom_surfix_icon.dart';
 import 'package:cafe_management/components/default_button.dart';
 import 'package:cafe_management/components/form_error.dart';
-import 'package:cafe_management/constants.dart';
 import 'package:cafe_management/size_config.dart';
 import 'package:cafe_management/widgets/alert_dialog.dart';
 import 'package:cafe_management/widgets/outline_input_border.dart';

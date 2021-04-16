@@ -2,7 +2,6 @@ import 'package:cafe_management/constants.dart';
 import 'package:cafe_management/screens/Home_Screen/components/Buy%20Now/buy_now.dart';
 import 'package:cafe_management/screens/Home_Screen/components/History/history.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class GridDashboard extends StatelessWidget {
@@ -35,12 +34,12 @@ class GridDashboard extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(boxShadow: [
           BoxShadow(
-            color: kPrimaryColor.withOpacity(0.3),
+            color: kCardColor,
             spreadRadius: 0,
             blurRadius: 2,
             offset: Offset(1, 0),
           )
-        ], color: Colors.grey[50], borderRadius: BorderRadius.circular(10)),
+        ], color: kCardColor, borderRadius: BorderRadius.circular(10)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -55,8 +54,7 @@ class GridDashboard extends StatelessWidget {
             Text(
               "Buy Now",
               textAlign: TextAlign.center,
-              style:
-                  GoogleFonts.teko(fontWeight: FontWeight.w600, fontSize: 18),
+              style: stylee,
             ),
           ],
         ),
@@ -73,12 +71,12 @@ class GridDashboard extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(boxShadow: [
           BoxShadow(
-            color: kPrimaryColor.withOpacity(0.3),
+            color: kCardColor,
             spreadRadius: 0,
             blurRadius: 2,
             offset: Offset(1, 0),
           )
-        ], color: Colors.grey[50], borderRadius: BorderRadius.circular(10)),
+        ], color: kCardColor, borderRadius: BorderRadius.circular(10)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -93,8 +91,7 @@ class GridDashboard extends StatelessWidget {
             Text(
               "History",
               textAlign: TextAlign.center,
-              style:
-                  GoogleFonts.teko(fontWeight: FontWeight.w600, fontSize: 18),
+              style: stylee,
             ),
           ],
         ),

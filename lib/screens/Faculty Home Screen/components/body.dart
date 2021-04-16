@@ -1,3 +1,4 @@
+import 'package:cafe_management/constants.dart';
 import 'package:cafe_management/screens/sign_in/sign_in_screen.dart';
 import 'package:cafe_management/widgets/snack_bar.dart';
 import 'package:flutter/cupertino.dart';
@@ -17,6 +18,7 @@ class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kPrimaryColor,
       body: Column(
         children: <Widget>[
           SizedBox(
@@ -51,6 +53,7 @@ class _BodyState extends State<Body> {
                   alignment: Alignment.topCenter,
                   icon: Icon(
                     Icons.logout,
+                    color: kOfferBackColor,
                   ),
                   onPressed: () {
                     confirmSignout(context);

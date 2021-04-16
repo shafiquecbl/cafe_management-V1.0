@@ -1,3 +1,4 @@
+import 'package:cafe_management/constants.dart';
 import 'package:cafe_management/screens/sign_in/sign_in_screen.dart';
 import 'package:cafe_management/widgets/snack_bar.dart';
 import 'package:flutter/cupertino.dart';
@@ -16,6 +17,7 @@ class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kDashboardColor,
       body: Column(
         children: <Widget>[
           SizedBox(
@@ -35,7 +37,9 @@ class _BodyState extends State<Body> {
                           .first
                           .toUpperCase(),
                       style: GoogleFonts.teko(
-                          fontWeight: FontWeight.bold, fontSize: 22),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 22,
+                          color: Colors.grey[350]),
                     ),
                     SizedBox(
                       height: 4,
@@ -53,6 +57,7 @@ class _BodyState extends State<Body> {
                   alignment: Alignment.topCenter,
                   icon: Icon(
                     Icons.logout,
+                    color: kOfferBackColor,
                   ),
                   onPressed: () {
                     confirmSignout(context);
