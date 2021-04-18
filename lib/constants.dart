@@ -9,11 +9,12 @@ const hexColor = Color(0xFFf5f4f4);
 const kOfferColor = Color(0xFFE3E9F5);
 const kOfferBackColor = Color(0xFFF5F9FC);
 const kProfileColor = Color(0xFF2B2B2B);
+const kTextColor = Color(0xFF757575);
 const kTextFieldColor = Color(0xFF12A89D);
 const kSecondaryColor = Color(0xFF979797);
-const kTextColor = Color(0xFF757575);
 const kDashboardColor = Color(0xFF2E1948);
-const kCardColor = Color(0xFF3F2C56);
+const kCardColor = hexColor;
+const kIconColor = Colors.deepPurpleAccent;
 
 final headingStyle = TextStyle(
   fontSize: getProportionateScreenWidth(28),

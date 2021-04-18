@@ -16,63 +16,62 @@ class _BodyState extends State<Body> {
   User user = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: kDashboardColor,
-      body: Column(
-        children: <Widget>[
-          SizedBox(
-            height: 80,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+        backgroundColor: kWhiteColor,
+        body: Stack(
+          children: [
+            Container(
+              width: size.width,
+              height: size.height * 0.4,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/images/curve.png'),
+                    fit: BoxFit.cover),
+              ),
+            ),
+            SafeArea(
+              child: Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Column(
                   children: <Widget>[
-                    Text(
-                      FirebaseAuth.instance.currentUser.email
-                          .split('@')
-                          .first
-                          .toUpperCase(),
-                      style: GoogleFonts.teko(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 22,
-                          color: Colors.grey[350]),
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      "Student",
-                      style: GoogleFonts.teko(
-                          color: Color(0xffa29aac),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600),
-                    ),
+                    ListTile(
+                        contentPadding:
+                            EdgeInsets.only(left: 20, right: 20, top: 20),
+                        title: Text(
+                          FirebaseAuth.instance.currentUser.email
+                              .split('@')
+                              .first
+                              .toUpperCase(),
+                          style: GoogleFonts.teko(
+                              color: hexColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 22),
+                        ),
+                        subtitle: Text(
+                          "Student",
+                          style: GoogleFonts.teko(
+                              color: Colors.deepOrangeAccent,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        trailing: IconButton(
+                          alignment: Alignment.topCenter,
+                          icon: Icon(
+                            Icons.logout,
+                            color: hexColor,
+                          ),
+                          onPressed: () {
+                            confirmSignout(context);
+                          },
+                        )),
+                    Expanded(child: GridDashboard()),
                   ],
                 ),
-                IconButton(
-                  alignment: Alignment.topCenter,
-                  icon: Icon(
-                    Icons.logout,
-                    color: kOfferBackColor,
-                  ),
-                  onPressed: () {
-                    confirmSignout(context);
-                  },
-                )
-              ],
+              ),
             ),
-          ),
-          SizedBox(
-            height: 40,
-          ),
-          GridDashboard()
-        ],
-      ),
-    );
+          ],
+        ));
   }
 }
 

@@ -2,26 +2,25 @@ import 'package:cafe_management/constants.dart';
 import 'package:cafe_management/screens/Home_Screen/components/Buy%20Now/buy_now.dart';
 import 'package:cafe_management/screens/Home_Screen/components/History/history.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class GridDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: StaggeredGridView.count(
-        crossAxisCount: 2,
-        crossAxisSpacing: 30,
-        mainAxisSpacing: 30,
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-        staggeredTiles: [
-          StaggeredTile.extent(1, 120),
-          StaggeredTile.extent(1, 120),
-        ],
-        children: [
-          buy(context),
-          history(context),
-        ],
-      ),
+    return StaggeredGridView.count(
+      crossAxisCount: 2,
+      crossAxisSpacing: 30,
+      mainAxisSpacing: 30,
+      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 20),
+      staggeredTiles: [
+        StaggeredTile.extent(1, 130),
+        StaggeredTile.extent(1, 130),
+      ],
+      children: [
+        buy(context),
+        history(context),
+      ],
     );
   }
 
@@ -34,18 +33,18 @@ class GridDashboard extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(boxShadow: [
           BoxShadow(
-            color: kCardColor,
+            color: kIconColor.withOpacity(0.8),
             spreadRadius: 0,
             blurRadius: 2,
             offset: Offset(1, 0),
           )
-        ], color: kCardColor, borderRadius: BorderRadius.circular(10)),
+        ], color: hexColor, borderRadius: BorderRadius.circular(10)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Icon(
               Icons.shopping_cart_outlined,
-              color: kTextFieldColor,
+              color: kIconColor,
               size: 42,
             ),
             SizedBox(
@@ -54,7 +53,8 @@ class GridDashboard extends StatelessWidget {
             Text(
               "Buy Now",
               textAlign: TextAlign.center,
-              style: stylee,
+              style: GoogleFonts.teko(
+                  color: kTextColor, fontWeight: FontWeight.w600, fontSize: 18),
             ),
           ],
         ),
@@ -71,18 +71,18 @@ class GridDashboard extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(boxShadow: [
           BoxShadow(
-            color: kCardColor,
+            color: kIconColor.withOpacity(0.8),
             spreadRadius: 0,
             blurRadius: 2,
             offset: Offset(1, 0),
           )
-        ], color: kCardColor, borderRadius: BorderRadius.circular(10)),
+        ], color: hexColor, borderRadius: BorderRadius.circular(10)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Icon(
               Icons.history_outlined,
-              color: kTextFieldColor,
+              color: kIconColor,
               size: 42,
             ),
             SizedBox(
@@ -91,7 +91,8 @@ class GridDashboard extends StatelessWidget {
             Text(
               "History",
               textAlign: TextAlign.center,
-              style: stylee,
+              style: GoogleFonts.teko(
+                  color: kTextColor, fontWeight: FontWeight.w600, fontSize: 18),
             ),
           ],
         ),
